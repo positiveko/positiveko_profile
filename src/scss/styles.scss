@@ -29,7 +29,7 @@ header {
     ul {
       display: grid;
       gap: 1px;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 60px);
       li {
         background-color: white;
@@ -66,7 +66,7 @@ main {
 
 .main__page {
   display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 50vh);
   margin-bottom: 100px;
   .main__img {
@@ -83,7 +83,7 @@ main {
       background-image: url('../../img/main4.jpg');
     }
     &:nth-child(5) {
-      background-image: url('../../img/main5.jpg');
+      background-image: url('../../img/main5.jpeg');
     }
     &:nth-child(6) {
       background-image: url('../../img/main6.jpg');
@@ -100,8 +100,8 @@ main {
 .positive {
   margin-bottom: 200px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  grid-template-rows: repeat(3, minmax(100px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   margin-bottom: 20px;
   gap: 1px;
   .positive__circle {
@@ -138,7 +138,7 @@ main {
 
 .travel {
   display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 50vh);
   margin-bottom: 200px;
   .travel__img {
@@ -182,7 +182,7 @@ footer {
 .content-wrapper {
   display: block;
 }
-@media (min-width: 500px) {
+@media (min-width: 350px) {
   .warning-message {
     display: block;
   }
