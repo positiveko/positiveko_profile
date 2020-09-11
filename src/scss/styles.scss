@@ -11,7 +11,7 @@ body {
   padding: 45px;
   background-color: #f8f3ec;
   height: 100%;
-  min-width: 500px;
+  min-width: 350px;
 }
 
 header {
@@ -83,7 +83,7 @@ main {
       background-image: url('../../img/main4.jpg');
     }
     &:nth-child(5) {
-      background-image: url('../../img/main5.jpeg');
+      background-image: url('../../img/main5.jpg');
     }
     &:nth-child(6) {
       background-image: url('../../img/main6.jpg');
@@ -98,7 +98,6 @@ main {
 }
 
 .positive {
-  margin-bottom: 200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -136,15 +135,112 @@ main {
   }
 }
 
-.travel {
+.travel__box {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 50vh);
-  margin-bottom: 200px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 30vw);
+  margin-bottom: 20px;
   .travel__img {
-    background-image: url('https://source.unsplash.com/random/');
+    background-image: url('../../img/travel1.jpg');
     background-position: center center;
     background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #38322e;
+    &:hover {
+      opacity: 0.1;
+      transition: 0.5s;
+    }
+    &:nth-child(2) {
+      background-image: url('../../img/travel2.jpg');
+    }
+    &:nth-child(3) {
+      background-image: url('../../img/travel3.jpg');
+    }
+    &:nth-child(4) {
+      background-image: url('../../img/travel4.jpg');
+    }
+    &:nth-child(5) {
+      background-image: url('../../img/travel5.jpg');
+    }
+    &:nth-child(6) {
+      background-image: url('../../img/travel6.jpg');
+    }
+    &:nth-child(7) {
+      background-image: url('../../img/travel7.jpg');
+    }
+    &:nth-child(8) {
+      background-image: url('../../img/travel15.jpg');
+    }
+    &:nth-child(9) {
+      background-image: url('../../img/travel9.jpg');
+    }
+    &:nth-child(10) {
+      background-image: url('../../img/travel10.jpg');
+    }
+    &:nth-child(11) {
+      background-image: url('../../img/travel13.jpg');
+    }
+    &:nth-child(12) {
+      background-image: url('../../img/travel18.jpg');
+    }
+  }
+}
+
+.art {
+  margin: 40px;
+  .art__container {
+    display: flex;
+    margin-bottom: 20px;
+    .art__img {
+      box-sizing: border-box;
+      img {
+        max-width: 100%;
+        opacity: 0.1;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.film {
+  margin-bottom: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 20px;
+  gap: 1px;
+  .film__img {
+    padding: 40% 0;
+    vertical-align: top;
+    display: flex;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #38322e;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+
+.music {
+  margin-bottom: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 20px;
+  gap: 1px;
+  .music__img {
+    padding: 40% 0;
+    vertical-align: top;
+    display: flex;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #38322e;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
   }
 }
 
@@ -196,7 +292,15 @@ footer {
 @media screen and (max-width: 768px) {
   .main__page {
     display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
     grid-template-rows: repeat(auto, 50vh);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .travel__box {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(50px, 1fr));
+    grid-template-rows: repeat(6, 40vh);
   }
 }
