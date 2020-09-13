@@ -2,6 +2,10 @@
 @import '_variables';
 @import '_elements';
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,6 +23,7 @@ header {
   border: 1px solid #38322e;
   margin-bottom: 100px;
   position: sticky;
+  z-index: 1000;
   top: 0;
   nav {
     text-align: center;
@@ -146,8 +151,9 @@ main {
     background-size: cover;
     border-radius: 50%;
     border: 1px solid #38322e;
+    opacity: 0.6;
     &:hover {
-      opacity: 0.1;
+      opacity: 1;
       transition: 0.5s;
     }
     &:nth-child(2) {
@@ -187,40 +193,86 @@ main {
 }
 
 .art {
-  margin: 40px;
-  .art__container {
-    display: flex;
-    margin-bottom: 20px;
-    .art__img {
-      box-sizing: border-box;
-      img {
-        max-width: 100%;
-        opacity: 0.1;
-        &:hover {
-          opacity: 1;
+  [id='slide01']:checked ~ .slidewrap .slidelist > li {
+    transform: translate(0%);
+  }
+  [id='slide02']:checked ~ .slidewrap .slidelist > li {
+    transform: translate(-100%);
+  }
+  [id='slide03']:checked ~ .slidewrap .slidelist > li {
+    transform: translate(-200%);
+  }
+  [id='slide04']:checked ~ .slidewrap .slidelist > li {
+    transform: translate(-300%);
+  }
+  input {
+    display: none;
+  }
+  .slidewrap {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      transition: all 0.5s;
+      a {
+        display: block;
+        position: relative;
+        img {
+          width: 100%;
         }
       }
+    }
+    label {
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 50px;
+      cursor: pointer;
+    }
+    .left {
+      left: 10px;
+      background: url(../../img/left.png) center center / 100% no-repeat;
+    }
+    .right {
+      right: 10px;
+      background: url(../../img/right.png) center center / 100% no-repeat;
     }
   }
 }
 
 .film {
   margin-bottom: 200px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  margin-bottom: 20px;
-  gap: 1px;
-  .film__img {
-    padding: 40% 0;
-    vertical-align: top;
-    display: flex;
-    background-color: white;
-    border-radius: 100%;
-    border: 1px solid #38322e;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
+  min-height: 1500px;
+  position: relative;
+  .banner {
+    width: 100%;
+
+    video {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #bg {
+      width: 100%;
+      height: 100%;
+      background: #fff
+        url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/XEIcon_xi-heart.svg/512px-XEIcon_xi-heart.svg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100px;
+      mix-blend-mode: screen;
+    }
   }
 }
 
@@ -301,6 +353,6 @@ footer {
   .travel__box {
     display: grid;
     grid-template-columns: repeat(1, minmax(50px, 1fr));
-    grid-template-rows: repeat(6, 40vh);
+    grid-template-rows: repeat(12, 40vh);
   }
 }
