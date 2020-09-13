@@ -193,19 +193,7 @@ main {
 }
 
 .art {
-  [id='slide01']:checked ~ .slidewrap .slidelist > li {
-    transform: translate(0%);
-  }
-  [id='slide02']:checked ~ .slidewrap .slidelist > li {
-    transform: translate(-100%);
-  }
-  [id='slide03']:checked ~ .slidewrap .slidelist > li {
-    transform: translate(-200%);
-  }
-  [id='slide04']:checked ~ .slidewrap .slidelist > li {
-    transform: translate(-300%);
-  }
-  input {
+  input[id*='slide'] {
     display: none;
   }
   .slidewrap {
@@ -246,6 +234,18 @@ main {
       background: url(../../img/right.png) center center / 100% no-repeat;
     }
   }
+}
+.art input[id='slide01']:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(0%);
+}
+.art input[id='slide02']:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-100%);
+}
+.art input[id='slide03']:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-200%);
+}
+.art input[id='slide04']:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-300%);
 }
 
 .film {
