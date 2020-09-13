@@ -11,10 +11,10 @@ html {
 
 body {
   font-family: 'Lora', serif;
-  padding: 45px;
+  padding: 40px;
   background-color: #f8f3ec;
   height: 100%;
-  min-width: 350px;
+  min-width: 500px;
 }
 
 header {
@@ -34,7 +34,7 @@ header {
       display: grid;
       gap: 1px;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 60px);
+      grid-template-rows: repeat(2, 50px);
       li {
         background-color: white;
         display: flex;
@@ -43,13 +43,14 @@ header {
         font-size: 20px;
         &:nth-child(2) {
           grid-column-start: span 2;
-          font-size: 32px;
+          font-size: 30px;
         }
         a {
           &:hover {
             background-color: #eb2300;
             color: white;
-            padding: 5px 15px;
+            padding: 5px 8px;
+            border-radius: 50%;
           }
         }
       }
@@ -253,11 +254,10 @@ main {
 
 .film {
   margin-bottom: 200px;
-  min-height: 1500px;
+  min-height: 800px;
   position: relative;
   .banner {
     width: 100%;
-
     video {
       position: relative;
       top: 0;
@@ -265,16 +265,6 @@ main {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-    #bg {
-      width: 100%;
-      height: 100%;
-      background: #fff
-        url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/XEIcon_xi-heart.svg/512px-XEIcon_xi-heart.svg.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100px;
-      mix-blend-mode: screen;
     }
   }
 }
@@ -384,7 +374,7 @@ footer {
 .content-wrapper {
   display: block;
 }
-@media (min-width: 350px) {
+@media (min-width: 500px) {
   .warning-message {
     display: block;
   }
