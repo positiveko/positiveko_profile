@@ -1,7 +1,6 @@
-var cardWidth = 4;
-var cardHeight = 3;
-var cardColor = [];
-var cardColors = [
+let cardWidth = 4;
+let cardHeight = 3;
+let colorPool = [
   '#A5736A', // brown
   '#A5736A',
   '#FECD56', // yellow
@@ -15,13 +14,14 @@ var cardColors = [
   '#F8A255', // orange
   '#F8A255',
 ];
-var cardColorset = cardColors.slice();
-var clickFlag = true;
-var clickedCard = [];
-var matchedCard = [];
-var gameStart;
+let cardColorset = colorPool.slice();
+let cardColor = [];
+let clickFlag = true;
+let clickedCard = [];
+let matchedCard = [];
+let gameStart;
 function shuffle() {
-  for (var i = 0; cardColorset.length > 0; i += 1) {
+  for (let i = 0; cardColorset.length > 0; i += 1) {
     cardColor = cardColor.concat(
       cardColorset.splice(Math.floor(Math.random() * cardColorset.length), 1)
     );
@@ -30,21 +30,21 @@ function shuffle() {
 
 function cardSet(cardWidth, cardHeight) {
   clickFlag = false;
-  for (var i = 0; i < cardWidth * cardHeight; i += 1) {
-    var card = document.createElement('div');
+  for (let i = 0; i < cardWidth * cardHeight; i += 1) {
+    let card = document.createElement('div');
     card.className = 'card';
-    var cardInner = document.createElement('div');
+    let cardInner = document.createElement('div');
     cardInner.className = 'card-inner';
-    var cardFront = document.createElement('div');
+    let cardFront = document.createElement('div');
     cardFront.className = 'card-front';
-    var cardBack = document.createElement('div');
+    let cardBack = document.createElement('div');
     cardBack.className = 'card-back';
     cardBack.style.backgroundColor = cardColor[i];
     cardInner.appendChild(cardFront);
     cardInner.appendChild(cardBack);
     card.appendChild(cardInner);
     (function (c) {
-      card.addEventListener('click', function () {
+      card.addEventListener('click', () => {
         if (clickFlag && !matchedCard.includes(c)) {
           c.classList.toggle('flipped');
           clickedCard.push(c);
@@ -57,15 +57,15 @@ function cardSet(cardWidth, cardHeight) {
               matchedCard.push(clickedCard[0]);
               matchedCard.push(clickedCard[1]);
               clickedCard = [];
-              if (matchedCard.length === 12) {
-                var gameFinish = new Date();
+              if (matchedCard.length === cardWidth * cardHeight) {
+                let gameFinish = new Date();
                 alert(
                   `Congratulations👏 Time record: ${parseInt(
                     (gameFinish - gameStart) / 1000
                   )} seconds`
                 );
                 document.querySelector('#gameTable').innerHTML = '';
-                cardColorset = cardColors.slice();
+                cardColorset = colorPool.slice();
                 cardColor = [];
                 matchedCard = [];
                 gameStart = null;
@@ -74,7 +74,7 @@ function cardSet(cardWidth, cardHeight) {
               }
             } else {
               clickFlag = false;
-              setTimeout(function () {
+              setTimeout(() => {
                 clickedCard[0].classList.remove('flipped');
                 clickedCard[1].classList.remove('flipped');
                 clickFlag = true;
@@ -92,12 +92,12 @@ function cardSet(cardWidth, cardHeight) {
     document.querySelector('#gameTable').appendChild(card);
   }
   document.querySelectorAll('.card').forEach(function (card, index) {
-    setTimeout(function () {
+    setTimeout(() => {
       card.classList.add('flipped');
     }, 1000 + 100 * index);
   });
 
-  setTimeout(function () {
+  setTimeout(() => {
     document.querySelectorAll('.card').forEach(function (card, index) {
       card.classList.remove('flipped');
     });

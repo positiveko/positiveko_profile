@@ -148,7 +148,7 @@ footer {
   gap: 1px;
   height: 60px;
   min-width: 400px;
-  border: 1px solid #38322e;
+  border: 1px solid#585858;
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
