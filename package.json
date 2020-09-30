@@ -1,9 +1,9 @@
 {
-  "name": "scss-masterclass",
+  "name": "positive-ko-profile",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/nomadcoders/scss-masterclass",
-  "author": "Nicolás Serrano Arévalo <itnico.las.me@gmail.com>",
+  "repository": "https://github.com/positiveko",
+  "author": "Positive Ko",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.4.5",
